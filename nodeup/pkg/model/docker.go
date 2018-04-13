@@ -482,6 +482,20 @@ var dockerVersions = []dockerVersion{
 		Hash:          "b4ce72e80ff02926de943082821bbbe73958f87a",
 		Dependencies:  []string{"libtool-ltdl", "libseccomp", "libcgroup"},
 	},
+
+	// 18.03.0 - Xenial
+	{
+		DockerVersion: "18.03.0",
+		Name:          "docker-ce",
+		Distros:       []distros.Distribution{distros.DistributionXenial},
+		Architectures: []Architecture{ArchitectureAmd64},
+		Version:       "18.03.0~ce-0~ubuntu",
+		Source:        "http://download.docker.com/linux/ubuntu/dists/xenial/pool/stable/amd64/docker-ce_18.03.0~ce-0~ubuntu_amd64.deb",
+		Hash:          "bbbfbfc282659d955ff35a759586a2e00c9db5c3",
+		Dependencies:  []string{"bridge-utils", "iptables", "libapparmor1", "libltdl7", "perl"},
+		//Depends: iptables, init-system-helpers, lsb-base, libapparmor1, libc6, libdevmapper1.02.1, libltdl7, libeseccomp2, libsystemd0
+		//Recommends: aufs-tools, ca-certificates, cgroupfs-mount | cgroup-lite, git, xz-utils, apparmor
+	},
 }
 
 func (d *dockerVersion) matches(arch Architecture, dockerVersion string, distro distros.Distribution) bool {
